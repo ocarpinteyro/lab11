@@ -11,21 +11,30 @@ Aquí empieza lab11: una base de Next.js para construir la web y avanzar con cam
 
 Arrancamos con la pantalla de Create Next App. Las funcionalidades del producto vendrán después.
 
+## La siguiente historia: pnpm
+
+- **Quién:** como desarrollador que trabaja en lab11.
+- **Quiero:** usar pnpm como gestor de dependencias del proyecto.
+- **Para qué:** instalar las mismas versiones y compartir un flujo de trabajo claro entre entornos.
+- **Por qué:** un solo gestor y su lockfile reducen diferencias de instalación y evitan mantener archivos de bloqueo que compiten entre sí.
+
+Pasamos de npm a pnpm. La versión del gestor queda en `package.json` y las versiones resueltas en `pnpm-lock.yaml`.
+
 ## Ejecutarlo en local
 
-Necesitas Node.js 20.9 o superior y npm.
+Necesitas Node.js 20.9 o superior y pnpm 9.0.6. Si tienes Corepack disponible, puedes activar esa versión con `corepack enable` y `corepack prepare pnpm@9.0.6 --activate`.
 
 ```bash
-npm ci
-npm run dev
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 Abre [localhost:3000](http://localhost:3000). La página está en `app/page.tsx` y el layout en `app/layout.tsx`.
 
 ```bash
-npm run lint   # Revisión con ESLint
-npm run build  # Compilación de producción
-npm start      # Servir la compilación
+pnpm lint   # Revisión con ESLint
+pnpm build  # Compilación de producción
+pnpm start      # Servir la compilación
 ```
 
 ## Cómo avanzamos
